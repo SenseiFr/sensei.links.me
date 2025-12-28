@@ -15,6 +15,7 @@
             --insta-bg: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
             --bg-color: #050505;
             --card-bg: #111;
+            --tiktok-bg #990099;
         }
 
         body {
@@ -162,6 +163,28 @@
         /* רקע הדרגתי לאייקון של אינסטגרם */
         .instagram .icon {
             background: var(--insta-bg);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .footer {
+            margin-top: 3rem;
+            font-size: 12px;
+            color: #555;
+        }
+
+        /* טיקטוק */
+          .tiktok {
+            position: relative;
+        }
+        .tiktok:hover {
+            border-color: #990099; /* סגול של טיקטוק */
+            box-shadow: 0 0 20px rgba(214, 41, 118, 0.4);
+            transform: translateY(-3px) scale(1.02);
+        }
+        /* רקע הדרגתי לאייקון של אינסטגרם */
+        .tiktok .icon {
+            background: var(--tiktok-bg);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
