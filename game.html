@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sensei FR – Mini Game</title>
+
+<style>
+    body {
+        background: radial-gradient(circle at top, #1a1a1a, #050505);
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+    }
+
+    #dynamic-bg {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background: radial-gradient(
+            600px circle at var(--x, 50%) var(--y, 50%),
+            rgba(200,200,200,0.15),
+            transparent 40%
+        );
+    }
+
+    .game-box {
+        text-align: center;
+    }
+
+    .score {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .circle {
+        width: 80px;
+        height: 80px;
+        background: radial-gradient(circle, #eee, #666);
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 0 25px rgba(255,255,255,0.4);
+        transition: transform 0.1s;
+    }
+
+    .circle:active {
+        transform: scale(0.9);
+    }
+</style>
+</head>
+<body>
+
+<div id="dynamic-bg"></div>
+
+<div class="game-box">
+    <div class="score">Score: <span id="score">0</span></div>
+    <div class="circle" id="circle"></div>
+</div>
+
+<script>
+    let score = 0;
+    const circle = document.getElementById("circle");
+    const scoreEl = document.getElementById("score");
+
+    circle.addEventListener("click", () => {
+        score++;
+        scoreEl.textContent = score;
+
+        const x = Math.random() * (window.innerWidth - 100);
+        const y = Math.random() * (window.innerHeight - 100);
+
+        circle.style.position = "absolute";
+        circle.style.left = x + "px";
+        circle.style.top = y + "px";
+    });
+
+    document.addEventListener("mousemove", e => {
+        document.body.style.setProperty("--x", e.clientX + "px");
+        document.body.style.setProperty("--y", e.clientY + "px");
+    });
+</script>
+
+</body>
+</html>
