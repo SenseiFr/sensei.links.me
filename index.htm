@@ -52,9 +52,6 @@ body {
           animation: bgFade 1.8s ease forwards;
        }
 
-        <a href="game.html" class="next-arrow">
-    <i class="fas fa-chevron-down"></i>
-</a>
 
 
 
@@ -294,28 +291,6 @@ body {
             body.style.setProperty('--glow-color', `${r}, ${g}, ${b}`);
         });
 
-.next-arrow {
-    position: fixed;
-    bottom: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 28px;
-    color: #aaa;
-    z-index: 10;
-    animation: float 1.6s ease-in-out infinite;
-    cursor: pointer;
-}
-
-.next-arrow:hover {
-    color: #fff;
-    transform: translateX(-50%) scale(1.2);
-}
-
-@keyframes float {
-    0% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(8px); }
-    100% { transform: translateX(-50%) translateY(0); }
-}
 
 
     </script>
